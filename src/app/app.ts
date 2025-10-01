@@ -1,16 +1,18 @@
 import {Component, signal} from '@angular/core';
 import {UserCard} from './components/user-card/user-card';
 import {User} from './models/user';
+import {JsonPipe} from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [UserCard],
+  imports: [UserCard, JsonPipe],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
   protected readonly title = signal('mi-proyecto-angular');
   public user: User = new User();
+  public selectedUser: User= new User();
   public users: User[] = [];
 
   constructor() {
@@ -21,8 +23,12 @@ export class App {
       {nombre: 'Juan Pérez', edad: 30, email: 'juan@email.com'},
       {nombre: 'María García', edad: 25, email: 'maria@email.com'},
       {nombre: 'Carlos López', edad: 35, email: 'carlos@email.com'}
-    ]
-    ;
+    ];
 
+  }
+
+  public userSelected($user: User): void {
+
+    this.selectedUser = $user;
   }
 }

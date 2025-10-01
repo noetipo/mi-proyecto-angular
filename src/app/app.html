@@ -1,5 +1,17 @@
-<app-user-card [user]="user"></app-user-card>
+@if (selectedUser.nombre !== undefined) {
+  <div>
+    <h3>Nombre: {{ selectedUser.nombre }}</h3>
+    <p>Email: {{ selectedUser.email }}</p>
+    <p>Edad: {{ selectedUser.edad }}</p>
+  </div>
 
-@for (usuario of users; track  $index ) {
-  <app-user-card [user]="usuario"></app-user-card>
+}
+
+
+
+<!--<app-user-card [user]="user"></app-user-card>-->
+
+@for (usuario of users; track $index) {
+  {{ usuario|json }}
+  <app-user-card [user]="usuario" (userSelected)="userSelected($event)"></app-user-card>
 }
