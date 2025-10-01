@@ -1,0 +1,18 @@
+<p>pipes-demo works!</p>
+<p>{{fecha | date:'full' }}</p>
+<p>Fecha corta: {{ fecha | date:'short' }}</p>
+<p>Personalizado: {{ fecha | date:'dd/MM/yyyy' }}</p>
+<!-- Currency Pipe -->
+<div class="pipe-example">
+  <h3>Currency Pipe</h3>
+  <p>USD: {{ precio | currency }}</p>
+  <p>EUR: {{ precio | currency:'EUR' }}</p>
+  <p>PEN: {{ precio | currency:'PEN':'symbol':'1.2-2' }}</p>
+</div>
+
+<!-- Percent Pipe -->
+<div class="pipe-example">
+  <h3>Percent Pipe</h3>
+  <p>Porcentaje: {{ porcentaje | percent }}</p>
+  <p>Con decimales: {{ porcentaje | percent:'2.2-2' }}</p>
+</div>

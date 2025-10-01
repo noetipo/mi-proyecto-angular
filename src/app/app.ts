@@ -2,10 +2,12 @@ import {Component, signal} from '@angular/core';
 import {UserCard} from './components/user-card/user-card';
 import {User} from './models/user';
 import {JsonPipe} from '@angular/common';
+import {PipesDemo} from './components/pipes-demo/pipes-demo';
+import {ResaltarPipe} from './pipes/resaltar-pipe';
 
 @Component({
   selector: 'app-root',
-  imports: [UserCard, JsonPipe],
+  imports: [PipesDemo, ResaltarPipe, UserCard],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

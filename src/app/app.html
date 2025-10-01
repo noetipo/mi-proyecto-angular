@@ -1,17 +1,17 @@
-@if (selectedUser.nombre !== undefined) {
+<!--@if (selectedUser.nombre !== undefined) {
   <div>
     <h3>Nombre: {{ selectedUser.nombre }}</h3>
     <p>Email: {{ selectedUser.email }}</p>
     <p>Edad: {{ selectedUser.edad }}</p>
   </div>
 
-}
-
+}-->
 
 
 <!--<app-user-card [user]="user"></app-user-card>-->
-
 @for (usuario of users; track $index) {
-  {{ usuario|json }}
   <app-user-card [user]="usuario" (userSelected)="userSelected($event)"></app-user-card>
 }
+
+<app-pipes-demo></app-pipes-demo>
+<p [innerHTML]="'Angular es un framework potente' | resaltar:'framework'"></p>
