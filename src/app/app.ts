@@ -4,10 +4,11 @@ import {User} from './models/user';
 import {JsonPipe} from '@angular/common';
 import {PipesDemo} from './components/pipes-demo/pipes-demo';
 import {ResaltarPipe} from './pipes/resaltar-pipe';
+import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [PipesDemo, ResaltarPipe, UserCard],
+  imports: [PipesDemo, ResaltarPipe, UserCard, RouterLink, RouterLinkActive, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

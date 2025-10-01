@@ -9,9 +9,19 @@
 
 
 <!--<app-user-card [user]="user"></app-user-card>-->
-@for (usuario of users; track $index) {
+<!--@for (usuario of users; track $index) {
   <app-user-card [user]="usuario" (userSelected)="userSelected($event)"></app-user-card>
 }
 
 <app-pipes-demo></app-pipes-demo>
-<p [innerHTML]="'Angular es un framework potente' | resaltar:'framework'"></p>
+<p [innerHTML]="'Angular es un framework potente' | resaltar:'framework'"></p>-->
+<nav class="navbar">
+  <a routerLink="/home" routerLinkActive="active">Inicio</a>
+  <a routerLink="/about" routerLinkActive="active">Acerca de</a>
+  <a routerLink="/productos" routerLinkActive="active">Productos</a>
+  <a routerLink="/contact" routerLinkActive="active">Contacto</a>
+</nav>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
